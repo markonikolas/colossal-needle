@@ -4,6 +4,8 @@ services:
   app:
     depends_on:
       - db
+    links:
+      - db
     build:
       context: .
     env_file:
@@ -22,7 +24,7 @@ services:
     volumes:
       - db:/var/lib/mysql
     ports:
-    - ${MYSQL_PORT}:${MYSQL_PORT} 
+    - ${MYSQL_TCP_PORT}:3306
 
 volumes:
   db:
