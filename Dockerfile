@@ -10,7 +10,7 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 
 RUN pnpm install && pnpm store prune
 
-EXPOSE 5000
+EXPOSE ${APP_PORT}
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 

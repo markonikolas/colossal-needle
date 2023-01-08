@@ -22,8 +22,11 @@ Add env variables in root of the project so docker can set the database correctl
 MYSQL_DATABASE=app
 MYSQL_USER=app
 MYSQL_PASSWORD=app
-MYSQL_HOST=localhost
-MYSQL_ROOT_PASSWORD=approot
+MYSQL_HOST=db
+MYSQL_ROOT_PASSWORD=root
+MYSQL_PORT=3308
+
+APP_PORT=5002
 ```
 
 ### Docker

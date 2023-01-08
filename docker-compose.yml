@@ -9,7 +9,7 @@ services:
     env_file:
       .env
     ports:
-      - 5000:5000
+      - ${APP_PORT}:${APP_PORT} 
     volumes:
       - .:/app
       - ./package.json:/app/package.json
@@ -22,7 +22,7 @@ services:
     volumes:
       - db:/var/lib/mysql
     ports:
-    - 3306:3306
+    - ${MYSQL_PORT}:${MYSQL_PORT} 
 
 volumes:
   db:
