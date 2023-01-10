@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { HashesRepository } from './hashes.repository';
 import { HashesService } from './hashes.service';
 
 describe('HashesService', () => {
@@ -6,7 +7,7 @@ describe('HashesService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [HashesService],
+      providers: [HashesService, HashesRepository],
     }).compile();
 
     service = module.get<HashesService>(HashesService);
@@ -14,5 +15,9 @@ describe('HashesService', () => {
 
   it('should be defined', () => {
     expect(service.getHash()).toBe('this is a test!');
+  });
+
+  it('should be defined', () => {
+    expect(service.setHash()).toBe('the hash is saved!');
   });
 });
