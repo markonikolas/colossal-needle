@@ -1,5 +1,5 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { Hash } from 'src/hashes/hash.entity';
+import { Hash } from '../hashes/hash.entity';
 
 export default () => ({
   port: parseInt(process.env.APP_PORT || '5000', 10),
