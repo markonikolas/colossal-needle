@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { HashesService } from './hashes.service';
 
 @Controller('hashes')
@@ -8,5 +8,10 @@ export class HashesController {
   @Get()
   getHash(): string {
     return this.hashService.getHash();
+  }
+
+  @Post()
+  setHash(): string {
+    return this.hashService.setHash();
   }
 }

@@ -5,8 +5,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import configuration, { databaseConfig } from './config/configuration';
-import { HashesController } from './hashes/hashes.controller';
-import { HashesService } from './hashes/hashes.service';
 import { HashesModule } from './hashes/hashes.module';
 
 @Module({
@@ -19,7 +17,7 @@ import { HashesModule } from './hashes/hashes.module';
     }),
     HashesModule,
   ],
-  controllers: [AppController, HashesController],
-  providers: [AppService, HashesService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
