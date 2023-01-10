@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryColumn } from 'typeorm';
 @Entity()
 export class Hash {
   @PrimaryColumn()
-  userID: number;
+  username: string;
 
   @Column()
   hash: string;
