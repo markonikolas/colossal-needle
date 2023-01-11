@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Hash } from './hash.entity';
+import { HashEntity } from './hash.entity';
 
 @Injectable()
 export class HashesService {
   constructor(
-    @InjectRepository(Hash)
-    private readonly hashesRepository: Repository<Hash>,
+    @InjectRepository(HashEntity)
+    private readonly hashesRepository: Repository<HashEntity>,
   ) {}
 
-  async findOneByUsername(username: any): Promise<Hash | null> {
+  async findOneByUsername(username: string): Promise<HashEntity | null> {
     return await this.hashesRepository.findOneBy({ username });
   }
 

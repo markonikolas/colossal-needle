@@ -1,11 +1,11 @@
 import { IsString } from 'class-validator';
 
-export class GetHashDTO {
+export class GetHashDto {
   @IsString()
   username: string;
 }
 
-export class CreateHashDTO extends GetHashDTO {
+export class CreateHashDto extends GetHashDto {
   @IsString()
   hash: string;
 }
