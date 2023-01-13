@@ -7,4 +7,9 @@ export class HashEntity {
 
   @Column()
   hash: string;
+
+  @Column({
+    default: false,
+  })
+  terminated: boolean;
 }

@@ -14,3 +14,8 @@ export class CreateHashDto {
   @IsString()
   hash: string;
 }
+
+export class UpdateHashDto extends GetHashDto {
+  @IsString()
+  hash: string;
+}

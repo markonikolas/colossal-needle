@@ -10,6 +10,10 @@ export class HashesService {
     private readonly hashesRepository: Repository<HashEntity>,
   ) {}
 
+  async findAll() {
+    return await this.hashesRepository.find();
+  }
+
   async findOneByUsername(username: string): Promise<HashEntity | null> {
     return await this.hashesRepository.findOneBy({ username });
   }
@@ -18,5 +22,16 @@ export class HashesService {
     const user = this.hashesRepository.create({ username, hash });
 
     return await this.hashesRepository.save(user);
+  }
+
+  async update(username: string, hash: string) {
+    return await this.hashesRepository.update({ username }, { hash });
+  }
+
+  async terminate(username: string) {
+    return await this.hashesRepository.update(
+      { username },
+      { terminated: true },
+    );
   }
 }
