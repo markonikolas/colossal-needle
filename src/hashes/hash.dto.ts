@@ -1,5 +1,5 @@
 import { IsString } from 'class-validator';
-import { HashUnique } from './validation.pipe';
+import { HashUnique } from './constraints/unique.constraint';
 
 export class GetHashDto {
   @IsString()

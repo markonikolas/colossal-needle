@@ -7,7 +7,7 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from 'class-validator';
-import { HashesService } from './hashes.service';
+import { HashesService } from '../hashes.service';
 
 @ValidatorConstraint({ name: 'UniqueUser', async: true })
 @Injectable()
