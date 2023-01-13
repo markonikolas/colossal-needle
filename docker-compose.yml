@@ -14,8 +14,6 @@ services:
       - ${APP_PORT}:${APP_PORT} 
     volumes:
       - .:/app
-      - ./package.json:/app/package.json
-      - ./pnpm-lock.yaml:/app/pnpm-lock.yaml
       - notused:/app/node_modules
 
   db:
