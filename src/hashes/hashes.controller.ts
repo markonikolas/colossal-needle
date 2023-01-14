@@ -10,8 +10,11 @@ import {
 
 import { GetHashDto, CreateHashDto, UpdateHashDto } from './hash.dto';
 import { HashesService } from './hashes.service';
+import configuration from 'src/config/configuration';
 
-@Controller('hashes')
+const { mainRoute } = configuration();
+
+@Controller(mainRoute)
 export class HashesController {
   constructor(private readonly hashService: HashesService) {}
 
