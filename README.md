@@ -27,7 +27,14 @@ MYSQL_ROOT_PASSWORD=root
 MYSQL_TCP_PORT=3308
 
 APP_PORT=5002
+APP_NAME=Needle
+APP_MAIN_ROUTE=hashes
 ```
+
+`APP_NAME` is just used in app service and will be removed in the future.
+
+`APP_MAIN_ROUTE` is to have dynamic main route for storing incoming hashes
+and will likely be removed / replaced in the future.
 
 ### Docker
 
