@@ -15,6 +15,8 @@ services:
     volumes:
       - .:/app
       - notused:/app/node_modules
+    networks:
+      - host
 
   db:
     image: mariadb:10.8
@@ -27,3 +29,8 @@ services:
 volumes:
   db:
   notused:
+
+networks:
+  host:
+    name: host
+    external: true
