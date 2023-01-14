@@ -2,7 +2,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { HashEntity } from '../hashes/hash.entity';
 
 export default () => ({
-  // TODO: Add app name here.
+  appName: process.env.APP_NAME || 'app',
   port: parseInt(process.env.APP_PORT || '5000', 10),
   mainRoute: process.env.APP_MAIN_ROUTE || 'hashes',
 });

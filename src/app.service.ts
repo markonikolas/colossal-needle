@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import configuration from './config/configuration';
 
 @Injectable()
 export class AppService {
   getHello(): string {
-    const { APP_NAME } = process.env;
-    return `Hello from ${APP_NAME}`;
+    const { appName } = configuration();
+    return `Hello from ${appName}`;
   }
 }
