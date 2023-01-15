@@ -42,40 +42,34 @@ and will likely be removed / replaced in the future.
 Start the project
 
 ```bash
-docker-compose up --build
-```
-
-or
-
-```bash
 docker compose up --build
 ```
 
 api -> [localhost:5000](localhost:5000)
 db -> localhost:3306
 
-## Running the app
+## Running npm commands from within the container
 
 ```bash
-# general
-$ docker compose run --rm api <command>
+# 
+docker compose run --rm api <command>
 
 # watch mode
-$ docker compose run --rm api pnpm run start:dev
+docker compose run --rm api pnpm run start:dev
 
 # production mode
-$ docker compose run --rm api pnpm run start:prod
+docker compose run --rm api pnpm run start:prod
 ```
 
-## Test
+## Run test
 
 ```bash
 # unit tests
-$ docker compose run --rm api pnpm run test
+docker compose run --rm api pnpm run test
 
 # e2e tests
-$ docker compose run --rm api pnpm run test:e2e
+docker compose run --rm api pnpm run test:e2e
 
 # test coverage
-$ docker compose run --rm api pnpm run test:cov
+docker compose run --rm api pnpm run test:cov
 ```
