@@ -9,4 +9,9 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('/availability')
+  getAvailability(): any {
+    return { message: 'Operational', code: 200 };
+  }
 }
