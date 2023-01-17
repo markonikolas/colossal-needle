@@ -38,3 +38,4 @@ volumes:
 networks:
   internal:
   shared:
+    name: shared
