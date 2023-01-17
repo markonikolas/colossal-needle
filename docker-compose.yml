@@ -15,6 +15,11 @@ services:
     volumes:
       - .:/app
       - notused:/app/node_modules
+    networks:
+      internal:
+      shared:
+        aliases:
+          - "${APP_MAIN_ROUTE}"
 
   db:
     image: mariadb:10.8
@@ -23,7 +28,13 @@ services:
       - db:/var/lib/mysql
     ports:
     - ${MYSQL_TCP_PORT}:3306
+    networks:
+      internal:
 
 volumes:
   db:
   notused:
+
+networks:
+  internal:
+  shared:
