@@ -27,9 +27,6 @@ MYSQL_TCP_PORT=3308
 APP_PORT=5002
 APP_NAME=Needle
 APP_MAIN_ROUTE=hashes
-
-HASHING_API_URL=http://<hashing-alias>:5002/v1/api
-SALTING_API_URL=http://<salting-alias>:5003/v1/api
 ```
 
 `APP_NAME` is just used in app service and will be removed in the future.
@@ -51,7 +48,7 @@ db -> localhost:3306
 ## Running npm commands from within the container
 
 ```bash
-# 
+#
 docker compose run --rm api <command>
 
 # watch mode
